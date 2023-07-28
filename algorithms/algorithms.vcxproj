@@ -116,6 +116,7 @@
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="doublyLinkedList.hpp" />
     <ClInclude Include="queue.hpp" />
     <ClInclude Include="simpleLinkedList.hpp" />
     <ClInclude Include="stack.hpp" />

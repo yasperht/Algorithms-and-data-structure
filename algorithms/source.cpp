@@ -2,44 +2,63 @@
 #include "stack.hpp"
 #include "queue.hpp"
 #include "simpleLinkedList.hpp"
+#include "doublyLinkedList.hpp"
 using namespace DataStructuresStack;
 using namespace DataStructuresQueue;
 using namespace DataStructuresSimpleList;
+using namespace DataStructuresDoublyList;
 
 
 int main() {
-	simpleLinkedList<string>* list = new simpleLinkedList<string>();
-
-	list->insert("Melanie");
-	list->insert("Zamira");
-	list->insert("Leidy");
-	list->insert("Laura");
-	list->insert("Paola");
-	list->print();
-	cout << "\nSize: " << list->getSize() << "\n";
+	DoublyLinkedList<string>* list = new DoublyLinkedList<string>();
 	
-	cout << "\n\n";
-	list->specificInsertion(1, "Daniela");
-	list->print();
-	cout << "\nSize: " << list->getSize() << "\n";
+	list->insertFront("Melanie");
+	list->insertFront("Leidy"); 
+	list->insertFront("Zamira");
+	list->insertFront("Laura");
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "\n\n";
+	list->insertBack("Fernando");
+	list->insertBack("Mario");
+	list->insertBack("Pepe");
+	list->insertBack("Juan");
+	list->insertBack("Carlos");
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
+
 	list->removeFront();
-	list->print();
-	cout << "\nSize: " << list->getSize() << "\n";
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "\n\n";
-	list->insert("Leidy");
-	list->print();
+	list->removeBack();
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "\n\n";
-	list->removeIn(1);
-	list->print();
-	cout << "\nSize: " << list->getSize() << "\n";
+	/*---------------------------------------*/
+	cout << "------------------------\n\n";
+	list->specificInsert(6, "Lucia");
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
+	list->specificRemove(2);
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "\n\n";
-	list->search("Melanie");
-	list->search("Paola");
+	/*---------------------------------------*/
+	cout << "------------------------\n\n";
+	list->update(3, "Messi");
+	list->printFordward();
+	cout << "\n";
+	list->search("Lucia");
+	cout << "\n";
+	list->search("Alejandro");
+	cout << "\n";
 
 	delete list;
 	_getch();
