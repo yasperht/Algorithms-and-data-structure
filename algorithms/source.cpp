@@ -3,62 +3,58 @@
 #include "queue.hpp"
 #include "simpleLinkedList.hpp"
 #include "doublyLinkedList.hpp"
+#include "circularSimplyLinkedList.hpp"
+
 using namespace DataStructuresStack;
 using namespace DataStructuresQueue;
 using namespace DataStructuresSimpleList;
 using namespace DataStructuresDoublyList;
+using namespace DataStructuresCircularSimplyList;
 
 
 int main() {
-	DoublyLinkedList<string>* list = new DoublyLinkedList<string>();
+	circularSimplyLinkedList<string>* list = new circularSimplyLinkedList<string>();
+
+	list->insert("Melanie");
+	list->insert("Leidy");
+	list->insert("Zamira");
+	list->insert("Laura");
+	list->insert("Paola");
+	list->print();
+	cout << "Size: " << list->getSize() << "\n";
 	
-	list->insertFront("Melanie");
-	list->insertFront("Leidy"); 
-	list->insertFront("Zamira");
-	list->insertFront("Laura");
-	list->printFordward();
+	cout << "---------------------------------\n\n";
+	list->insertBegin("Merlyn");
+	list->print();
 	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
 
-	list->insertBack("Fernando");
-	list->insertBack("Mario");
-	list->insertBack("Pepe");
-	list->insertBack("Juan");
-	list->insertBack("Carlos");
-	list->printFordward();
+	cout << "\n\n";
+	list->insertEnd("Amanda");
+	list->print();
 	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
 
-	list->removeFront();
-	list->printFordward();
+	cout << "---------------------------------\n\n";
+	list->specificInsertion(3, "Lucia");
+	list->print();
 	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
 
-	list->removeBack();
-	list->printFordward();
+	cout << "\n\n";
+	cout << "Deleting the list\n";
+	list->specificRemove(5);
+	list->print();
 	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
 
-	/*---------------------------------------*/
-	cout << "------------------------\n\n";
-	list->specificInsert(6, "Lucia");
-	list->printFordward();
+	cout << "\n\n";
+	list->removeBegin();
+	list->print();
 	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
-	list->specificRemove(2);
-	list->printFordward();
-	cout << "Size: " << list->getSize() << "\n";
-	cout << "\n";
 
-	/*---------------------------------------*/
-	cout << "------------------------\n\n";
-	list->update(3, "Messi");
-	list->printFordward();
-	cout << "\n";
+	list->removeEnd();
+	list->print();
+	cout << "Size: " << list->getSize() << "\n";
+
 	list->search("Lucia");
-	cout << "\n";
-	list->search("Alejandro");
-	cout << "\n";
+	
 
 	delete list;
 	_getch();

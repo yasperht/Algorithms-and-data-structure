@@ -117,6 +117,7 @@ namespace DataStructuresDoublyList {
 
 		}	
 		Node* getSpecificNode(int position) {
+			if (isEmpty() || position <= 0 || (position > this->size - 1)) { return nullptr; }
 			Node* temporal;
 
 			if (position == 1 && this->size == 1) { temporal = this->head->next; }
@@ -189,16 +190,7 @@ namespace DataStructuresDoublyList {
 		void insertBack(T value) {
 			Node* newNode = new Node(value);
 
-			if (isEmpty()) {
-				newNode->next = this->tail;
-				newNode->prev = this->head;
-
-				this->tail->prev = newNode;
-				this->head->next = newNode;
-				this->size++;
-
-				return;
-			}
+			if (isEmpty()) { this->insertFront(value);}
 			
 			if (!found(value)) {
 				newNode->next = this->tail;
@@ -223,7 +215,6 @@ namespace DataStructuresDoublyList {
 			}
 			else { cout << "The list is empty\n"; }
 		}
-
 		void removeBack() {
 			if (!isEmpty()) {
 				Node* aux = this->tail->prev;
@@ -274,7 +265,7 @@ namespace DataStructuresDoublyList {
 		}
 
 		void update (int position, T value){
-			if (!isEmpty()) {
+			if (isEmpty() == false && found(value) == false) {
 				Node* current = getSpecificNode(position);
 				current->next->value = value;
 			}
@@ -282,7 +273,7 @@ namespace DataStructuresDoublyList {
 		}
 
 		void search(T value) {
-			if (found(value)) { cout << "Value [" << value << "] found\n"; }
+			if ( isEmpty() == false && found(value) == true) { cout << "Value [" << value << "] found\n"; }
 			else { cout << "Value is not found\n"; }
 		}
 		
