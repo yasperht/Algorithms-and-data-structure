@@ -4,57 +4,62 @@
 #include "simpleLinkedList.hpp"
 #include "doublyLinkedList.hpp"
 #include "circularSimplyLinkedList.hpp"
+#include "circularDoublyLinkedList.hpp"
 
 using namespace DataStructuresStack;
 using namespace DataStructuresQueue;
 using namespace DataStructuresSimpleList;
 using namespace DataStructuresDoublyList;
 using namespace DataStructuresCircularSimplyList;
+using namespace DataStructuresCircularDoublyList;
 
 
 int main() {
-	circularSimplyLinkedList<string>* list = new circularSimplyLinkedList<string>();
+	circularDoublyLinkedList<string>* list = new circularDoublyLinkedList<string>();
 
 	list->insert("Melanie");
 	list->insert("Leidy");
-	list->insert("Zamira");
 	list->insert("Laura");
 	list->insert("Paola");
-	list->print();
+	list->printFordward();
 	cout << "Size: " << list->getSize() << "\n";
-	
-	cout << "---------------------------------\n\n";
-	list->insertBegin("Merlyn");
-	list->print();
-	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "\n\n";
-	list->insertEnd("Amanda");
-	list->print();
+	list->insertBegin("Miriam");
+	list->printFordward();
 	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
 
-	cout << "---------------------------------\n\n";
+	list->insertEnd("Luz");
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+	cout << "\n";
+
 	list->specificInsertion(3, "Lucia");
-	list->print();
+	list->printFordward();
 	cout << "Size: " << list->getSize() << "\n";
 
+	/*Removing*/
 	cout << "\n\n";
-	cout << "Deleting the list\n";
-	list->specificRemove(5);
-	list->print();
-	cout << "Size: " << list->getSize() << "\n";
+	cout << "Removing the list\n";
 
-	cout << "\n\n";
 	list->removeBegin();
-	list->print();
+	list->printFordward();
 	cout << "Size: " << list->getSize() << "\n";
 
 	list->removeEnd();
-	list->print();
+	list->printFordward();
+	cout << "Size: " << list->getSize() << "\n";
+
+	list->specificRemove(3);
+	list->printFordward();
 	cout << "Size: " << list->getSize() << "\n";
 
 	list->search("Lucia");
-	
+	cout << "\n\n";
+	list->printFordward();
+	list->printReverse();
+	cout << "Size: " << list->getSize() << "\n";
 
 	delete list;
 	_getch();

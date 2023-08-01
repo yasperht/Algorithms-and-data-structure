@@ -179,13 +179,14 @@ namespace DataStructuresCircularSimplyList {
 
 		void print() {
 			Node* current = this->header;
+			T value = this->header->value;
 
 			do {
 				cout << current->value << "->";
 				current = current->next;
 			} while (current != this->tail->next);
 
-			cout << "NULL\n";
+			cout << "[" value "]\n";
 		}
 	};
 

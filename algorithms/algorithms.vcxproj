@@ -116,6 +116,7 @@
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="circularDoublyLinkedList.hpp" />
     <ClInclude Include="circularSimplyLinkedList.hpp" />
     <ClInclude Include="doublyLinkedList.hpp" />
     <ClInclude Include="queue.hpp" />
