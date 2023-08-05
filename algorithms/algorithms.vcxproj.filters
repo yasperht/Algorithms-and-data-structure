@@ -41,5 +41,14 @@
     <ClInclude Include="circularDoublyLinkedList.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="bubbleSort.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="selectionSort.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="insertionSort.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

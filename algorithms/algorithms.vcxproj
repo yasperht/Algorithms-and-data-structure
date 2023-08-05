@@ -116,10 +116,13 @@
     <ClCompile Include="source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bubbleSort.hpp" />
     <ClInclude Include="circularDoublyLinkedList.hpp" />
     <ClInclude Include="circularSimplyLinkedList.hpp" />
     <ClInclude Include="doublyLinkedList.hpp" />
+    <ClInclude Include="insertionSort.hpp" />
     <ClInclude Include="queue.hpp" />
+    <ClInclude Include="selectionSort.hpp" />
     <ClInclude Include="simpleLinkedList.hpp" />
     <ClInclude Include="stack.hpp" />
   </ItemGroup>
